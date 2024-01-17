@@ -17,7 +17,7 @@ import os.path
 
 def load_gan(mode, device = 'cpu', path: Text = '.'):
     if mode == "biggan":
-        gan = BigGAN.from_pretrained('biggan-deep-256').to(device)
+        gan = BigGAN.from_pretrained('biggan-deep-128').to(device)
         gan_layers = []
         for name, layer in gan.named_modules():
             if "conv" in name:
