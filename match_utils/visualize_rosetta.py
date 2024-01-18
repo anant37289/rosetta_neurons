@@ -17,7 +17,7 @@ from match_utils import matching, stats, proggan, nethook, dataset, loading, plo
 
 
 
-def viz_matches(gan, discr, dataset, ganlayers, discrlayers, ganstats, discrstats, gan_mode, discr_mode, global_matches):
+def viz_matches(gan, discr, dataset, ganlayers, discrlayers, ganstats, discrstats, gan_mode, discr_mode, global_matches,save_path="/kaggle/working"):
     
     '''Visualize Rosetta Neurons across all 6 models.'''
     
@@ -151,7 +151,7 @@ def viz_matches(gan, discr, dataset, ganlayers, discrlayers, ganstats, discrstat
                         ax = plt.gca()
                         ax.set_title("Discr. Layer "+str(discrunit[0])+", Unit "+str(discrunit[1]), fontsize = 8)
                         plt.imshow(viz_list[kkkk-2][jjjj][2][0,0])
-                    
+                    plt.savefig(save_path + "Universal Match #" + str(rank+1)+" , Ex. "+str(jjjj+1))
                     logger.setLevel(old_level)
 
            
